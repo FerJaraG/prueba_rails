@@ -1,0 +1,24 @@
+<h1>Index de Tareas</h1>
+<%= notice %> <br>
+<div class="">
+	
+
+	<table class="col-md-6">
+		
+		<% @todos.each do |todo| %>
+		<tr class="card float-left">
+			<td class="card-body">Descripcion: <%= todo.description  %></td>
+			<td class="card-body">Completado: <%= todo.completed %></td>
+			<td class="card-body"><button type=""><%= link_to 'Completado', complete_path(todo)%></button></td>
+			<td class="card-body"><button type=""><%= link_to 'Show', todo_path(todo) %></button></td>
+			<td class="card-body"><button type=""><%= link_to 'Edit', edit_path(todo) %></button></td>
+			<td class="card-body"><button type=""><%= link_to 'Destroy', delete_path(todo), method: :delete %></button></td>
+		</tr>
+	<% end %> 
+	</table>
+
+</div>
+
+
+
+

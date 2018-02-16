@@ -1,0 +1,42 @@
+<h2>Listado tareas</h2>
+
+<div class="col-md-12 ">
+	<div class="col-md-6 float-left">
+		<h4>Completados</h4>
+		<table>
+			<tr>
+				<th>Descripcion</th>
+				<th>Completado</th>
+			</tr>
+				<% @todos.each do |todo| %>
+				<tr>
+					<% if todo.completed == true %>
+					<td><%= todo.description  %></td>
+					<td><%= todo.completed %></td>
+					<%end %>
+				</tr>
+				<% end %> 
+		</table>
+	</div>
+
+	<div class="col-md-6 float-left">
+		<h4>No Completados</h4>
+		<table>
+			<tr>
+				<th>Descripcion</th>
+				<th>Completado</th>
+			</tr>
+				<% @todos.each do |todo| %>
+				<tr>
+					<% if todo.completed == false %>
+					<td><%= todo.description  %></td>
+					<td><%= todo.completed %></td>
+					<%end %>
+				</tr>
+				<% end %> 
+		</table>
+	</div>
+
+</div>
+
+<%= link_to 'Volver al index', todos_path %>

@@ -1,0 +1,11 @@
+<h1>Editar Tarea</h1>
+
+<%= form_with(model: @todo, local: true) do |form| %>
+	<%= form.label :description, 'Descripcion' %>
+	<%= form.text_field :description %><br><br>
+	<%= form.label :completed, 'Completado' %>
+	<%= form.check_box :completed %><br><br>
+	<%= form.submit 'Editar' %>
+<% end %><br><br>
+
+<%= link_to 'Volver al index', todos_path %>
