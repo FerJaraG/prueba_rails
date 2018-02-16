@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   get 'listar', to: 'todos#list', as: 'list'
 
 
-  #get 'root#index'
+  root 'todos#index'
 end
